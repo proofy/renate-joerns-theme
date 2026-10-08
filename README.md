@@ -1,4 +1,4 @@
-Serinty Zolo Theme
+Renate Jörns Zola Theme
 ==================
 
 
