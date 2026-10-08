@@ -1,7 +1,7 @@
 name = "Serinty"
 description = "Responsive design, business style, dark mode, and more."
 license = "MIT"
-homepage = "https://serinty.net"
+homepage = "https://renate-joerns.de"
 
 min_version = "0.5.1"
 
@@ -12,7 +12,7 @@ demo = "https://serinty.net"
 # be merged with user data, some kind of prefix or nesting is preferable
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
-logo_path="images/serinty.svg"
+logo_path="images/rena-music.svg"
 
 
 #navbar_items
