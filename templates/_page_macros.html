@@ -1,0 +1,36 @@
+{% macro render_language(longlang=true) -%}
+              <!-- Language -->
+              <div class="languages">
+                <select class="lang" onchange="window.location.href=this.value" id="languagechooser">
+                  {% for t in page.translations -%}
+                  {% if t.lang != config.default_language -%}
+                      <option value="{{t.permalink}}"
+                  {% else -%}
+                      <option value="{{t.permalink}}"
+                  {% endif -%}
+                  {%- if t.lang == lang -%}
+                  selected="selected"
+                  {%- endif -%}
+                  >
+                  {%- if longlang -%}  
+                  {{ trans(key=t.lang, lang=lang) }} ({{t.lang}})
+                  {%- else -%}
+                  {{ t.lang }}
+                  {%- endif -%}
+                    </option>     
+                  {% endfor -%}  
+                </select>
+              </div>
+{% endmacro render_language -%}              
+
+
+{% macro metaOgpLangs() -%}
+   {% for t in page.translations -%}
+   {% if t.lang == lang -%}
+      <meta property="og:locale" content="{{t.lang}}_{{t.lang | upper}}" />
+   {% else -%}
+      <meta property="og:locale:alternate" content="{{t.lang}}_{{t.lang  | upper}}" />
+   {% endif -%}
+   {% endfor -%}
+{% endmacro metaOgpLangs -%}
+

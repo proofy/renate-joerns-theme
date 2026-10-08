@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "Origo Pro";
+  src: url("fonts/OrigoPro-Regular.eot");
+  src: url("fonts/OrigoPro-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/OrigoPro-Regular.woff2") format("woff2"), url("fonts/OrigoPro-Regular.woff") format("woff"), url("fonts/OrigoPro-Regular.ttf") format("truetype"), url("fonts/OrigoPro-Regular.svg#Origo Pro") format("svg");
+}
+body {
+  color: #004235;
+  background-image: url("images/giraffe.svg");
+  background-size: 150%;
+  font-family: "Origo Pro";
+  font-weight: Regular;
+}
+body .fa-sun-o {
+  display: none;
+}
+body .fa-moon-o {
+  display: block;
+  color: #000000;
+}
+
+.dark-mode {
+  background-color: #000000;
+  background-repeat: repeat;
+  color: #ccffdb;
+  font-family: "Origo Pro";
+  font-weight: Regular;
+}
+.dark-mode .fa-moon-o {
+  display: none;
+}
+.dark-mode .fa-sun-o {
+  display: block;
+}
+.dark-mode a:visited {
+  color: #5e5e5e;
+}
+.dark-mode a:link {
+  color: #bbeeca;
+}
+.dark-mode a:hover {
+  color: #ca88df;
+}
+.dark-mode a:active {
+  color: #004235;
+}
+
+.hero {
+  padding-top: 110px;
+}
+.hero .section-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  font-size: 22px;
+}
+.hero .section-cont .text {
+  width: 40%;
+}
+.hero .section-cont .text h1 {
+  font-size: 50px;
+}
+
+@media (max-width: 768px) {
+  .dark-mode select {
+    color: #ccffdb;
+    font-family: "Origo Pro";
+    font-weight: Regular;
+  }
+  .hero {
+    padding-top: 10px;
+  }
+  .hero .section-cont {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+  .hero .section-cont .text {
+    width: 80%;
+  }
+}/*# sourceMappingURL=home.css.map */

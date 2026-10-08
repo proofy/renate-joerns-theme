@@ -1,0 +1,57 @@
+{% extends "base.html"%}
+{% import "_page_macros.html" as pmacros -%}
+{% block head %}
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ current_url }}" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@{{ config.extra.contact.twitter }}" />
+    <meta name="twitter:creator" content="@{{ config.extra.default.author }}">
+    <meta name="twitter:title" content="{{ page.title }}">
+    <meta name="twitter:image" content="{{ macros::getCardPicture(assets=page.assets) }}">
+{% if page.description -%}
+    <meta property="og:description" content="{{ page.description }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+{% endif -%}
+    <meta property="og:determiner" content="the" />
+{{ pmacros::metaOgpLangs() }}
+    <meta property="og:site_name" content="{{ config.title }}" />
+    <title>{{ page.title }}</title>
+    {{ super() }}
+    {% endblock %}
+    {% block language %}
+        {{ pmacros::render_language() }}   
+    {% endblock %}
+
+{% if page.toc %}
+<div id="toc_container">
+    <p class="toc_title">Contents</p>
+    <div class="toc_list">
+    {% for h2 in page.toc %}
+        <div>
+            <a href="{{ h1.permalink | safe }}">{{ h1.title }}</a>
+            {% if h1.children %}
+                <div>
+                    {% for h3 in h2.children %}
+                        <div>
+                            <a href="{{ h2.permalink | safe }}">{{ h2.title }}</a>
+                        </div>
+                    {% endfor %}
+                    </div>
+            {% endif %}
+                </div>
+    {% endfor %}
+            </div>
+        </div>
+{% endif %}
+
+{% block content %}
+      <section class="pagecontent">
+            <article class="container wrapper grid">
+                <h1>{{page.title}}</h1>
+                <div class="paras grid">  
+                    {{ page.content | safe }}
+                </div>
+            </article>
+      </section>
+{% endblock %}

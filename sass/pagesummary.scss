@@ -1,0 +1,33 @@
+@import 'colors';
+
+$pic_width: 240px;
+$pic_height: 180px;
+
+.pagesummaryblock {
+    border: 2px;
+    border-color: $dark-bg-color;
+    padding: 10px;
+    margin: 10px;
+}
+
+.pagesummarytitle {
+    font-size: 22px;
+}
+
+.pagesummarydescription {
+    font-size: 18px;
+}
+
+.pagesummaryheaderlist {
+    padding-left: 15px;
+}
+
+.pagesummaryheaderitem {
+    font-size: 16px;
+    list-style: circle;
+}
+
+.pagesummarysvg {
+    width: $pic_width;
+    height: $pic_height;
+}

@@ -1,0 +1,88 @@
+# The URL the site will be built for
+base_url = "https://serinty.net"
+
+# The site title and description; used in feeds by default.
+title = "Serinty Ltd."
+description = "Your Data - Your Money"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+default_language = "en"
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[languages]
+
+[languages.de]
+generate_feed = true # there will be a feed for German content
+build_search_index = true
+title = "Serinty Ltd."
+description = "Deine Daten - Dein Geld"
+
+[languages.de.translations]
+en = "Englisch"
+de = "Deutsch"
+sw = "Swahili"
+content = "Inhalt"
+contact = "Kontakt"
+follow = "Folgen Sie uns"
+phone = "Telefon"   
+title = "Serinty Ltd."
+description = "Deine Daten - Dein Geld"
+
+[languages.sw]
+generate_feed = true # there will be a feed for Swahili content
+build_search_index = true
+title = "Serinty Ltd."
+description = "Data Yako - Pesa Zako"
+
+[languages.sw.translations]
+en = "Kiingereza"
+de = "Kijerumani"
+sw = "Kiswahili"
+content = "yaliyomo"
+contact = "Wasiliana nasi"
+follow = "Tutembelee"
+phone = "Simu"
+
+[languages.en]
+generate_feed = true # there will be a feed for english content
+build_search_index = true
+
+[languages.en.translations]
+en = "English"
+de = "German"
+sw = "Swahili"
+contact = "Contact"
+follow = "Follow us"
+phone = "Phone"
+
+[extra]
+# Put all your custom variables here
+logo_path = 'images/serinty.png'
+debug = false
+startyear = "2022"
+contact.phone = "+255-555555555"
+contact.email = "info@serinty-net"
+contact.address = "P.O. Box 1234, Dar es Salaam, Tanzania"
+contact.facebook = "serinty"
+contact.twitter = "serinty_net"
+contact.instagram = "serinty"
+contact.linkedin = "serinty"
+contact.youtube = "serinty"
+contact.whatsapp = "https://wa.me/255555555555"
+contact.telegram = "https://t.me/serinty"
+contact.trustpilot = "https://www.trustpilot.com/review/serinty.net"
+default.author = "proofy"
+default.width = 600
+default.height = 314
+facebookdomainverification = "1234567890"
+googlegtagid = "G-1234567890"
+trustpilotbusinessunitid = "1234567890"
+trustpilottemplateid = "1234567890"

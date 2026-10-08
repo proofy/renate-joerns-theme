@@ -1,0 +1,107 @@
+@import 'colors','font';
+
+body {
+  color: $light-font-color;
+  background-image: url("images/giraffe.svg");
+  background-size: 150%;
+  font-family: "Origo Pro";
+  font-weight: normal;
+  .fa-sun-o {
+    display: none;
+    cursor: pointer;    
+  }
+  .fa-moon-o {
+    display: block;
+    cursor: pointer;    
+  }
+}
+.dark-mode {
+  background-color: $dark-bg-color;
+  background-repeat: repeat;
+  color: $dark-font-color;
+  font-family: "Origo Pro";
+  font-weight: normal;
+  .fa-moon-o {
+    display: none;
+    cursor: pointer;
+  }
+  .fa-sun-o {
+    display: block;
+    cursor: pointer;
+  }
+
+  a:visited {
+    color: #5e5e5e;
+  }
+  a:link {
+    color: #bbeeca;
+  }
+  a:hover {
+    color: #ca88df;
+  }
+  a:active {
+    color: #004235;
+  }
+}
+.hero {
+  padding-top: 40px;
+  .section-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    font-size: 22px;
+    .text {
+      width: 40%;
+      h1 {
+        font-size: 50px;
+      }
+    }
+  }
+}
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+}
+
+@media (max-width: 768px) {
+  .dark-mode {
+    select {
+      color: $dark-font-color;
+      font-family: "Origo Pro";
+      font-weight: normal;
+    }
+  }
+  .hero {
+    padding-top: 10px;
+    .section-cont {
+      display: flex;
+
+      flex-flow: column-reverse;
+      .text {
+        width: 80%;
+      }
+    }
+  }
+}
+
+.extra-cont, article {
+    margin: 2em;
+    h1 {
+        padding-bottom: 20px;
+    }
+}

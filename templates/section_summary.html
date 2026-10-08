@@ -1,0 +1,37 @@
+{% extends "section.html" -%}
+{% import "_macros.html" as macros %}
+{% block content -%}
+<!-- section_summary -->
+{{ super() }}
+      <!-- Preview Section -->
+      <section class="preview">
+        <div class="container wrapper">
+          <div class="items grid">
+            {% for childpage in section.pages -%}
+                <!-- Item -->
+            <div class="item grid"">
+              <div class="texts grid">
+                <a href="{{ childpage.permalink }}" class="title">{{ childpage.title }}</a>
+        
+                <span class="description">{{ childpage.description }}</span>
+            </div>
+            <div class="recovery-img">
+              {{ macros::getPictures(assets=childpage.assets) }}
+            </div>
+            {% if childpage.toc -%}
+            <div class="texts enumeration grid">
+              {% for tocheader in childpage.toc -%}
+                <div class="text flex align-center">
+                  {{ smacros::checkBubble() }}
+                  <span>{{ tocheader.title }}</span>
+                </div>
+              {% endfor -%}
+            </div>
+            {% endif -%}
+            </div> <!-- end item grid -->
+            {% endfor -%}
+        </div> <!-- end items grid -->
+      </div>
+    </section> <!-- end preview -->
+
+{% endblock -%}

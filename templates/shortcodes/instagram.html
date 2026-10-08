@@ -1,0 +1,52 @@
+{% if appId and appSecret and userId -%}
+<!-- https://api.instagram.com/oauth/authorize?client_id=275242695159427&redirect_uri=http://serinty.local:1111/&scope=user_profile,user_media&response_type=code -->
+<style>
+    .instagram-image {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+    }
+  </style>
+<div id = "instagram">
+  <h3>Die letzten 4 Instagram-Fotos von serinty_net</h1>
+  <div id="instagram-photos"></div>
+
+  <script>
+    // Stellen Sie sicher, dass Sie Ihre App-ID und App Secret hier einfügen
+    const appId = '{{userId }}';
+    const appSecret = '{{appSecret}}';
+    const userId = '{{appId}}';
+
+    // Rufen Sie den Zugriffstoken mit der App-ID und dem App Secret ab
+    async function getAccessToken() {
+      const response = await fetch(`https://graph.instagram.com/access_token?grant_type=client_credentials&client_id=${appId}&client_secret=${appSecret}`);
+      const data = await response.json();
+      return data.access_token;
+    }
+
+    // Rufen Sie die letzten 4 Fotos des Instagram-Accounts ab
+    async function getInstagramPhotos() {
+      const accessToken = await getAccessToken();
+      const response = await fetch(`https://graph.instagram.com/${userId}/media?fields=media_url&limit=4&access_token=${accessToken}`);
+      const data = await response.json();
+      return data.data;
+    }
+
+    // Zeigen Sie die Instagram-Fotos auf der Seite an
+    async function displayInstagramPhotos() {
+      const photosContainer = document.getElementById('instagram-photos');
+      const photos = await getInstagramPhotos();
+
+      photos.forEach(photo => {
+        const img = document.createElement('img');
+        img.src = photo.media_url;
+        img.alt = 'Instagram-Foto';
+        img.classList.add('instagram-image');
+        photosContainer.appendChild(img);
+      });
+    }
+
+    displayInstagramPhotos();
+  </script>
+</div>
+{% endif -%}

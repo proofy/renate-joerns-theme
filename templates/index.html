@@ -1,0 +1,53 @@
+{% extends "base.html"%}
+{% import "_macros.html" as macros %}
+{% import "_section_macros.html" as smacros %}
+{% block head -%}
+      <meta property="og:title" content="{{ section.title }}" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="{{ current_url }}" />
+  {% if section.description -%}
+      <meta property="og:description" content="{{ section.description }}" />
+  {% endif -%}
+      <meta property="og:determiner" content="the" />
+      {{ smacros::metaOgpLangs() }}
+      <meta property="og:site_name" content="{{ config.title }}" />
+      <title>{{ section.title }}</title>
+      <!-- head end index.html -->
+      {{ super() }}      
+{% endblock -%}
+    {% block language -%}
+      {{ smacros::render_language() }}
+    {% endblock -%}
+
+{% block content %}
+  {{ super() }}
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container wrapper justify-center align-center">
+          <hgroup>
+              <h1>{{section.title}}</h1>
+              <p>{{section.description}}</p>
+          </hgroup>
+          {% if section.assets %}
+          <!-- img -->
+          <div class="img flex justify-center align-center">
+            <!-- TODO: get image name and alternative text dynamically -->
+            {{ macros::getPictures(assets=section.assets) }}
+            
+            <!-- <img src="{{get_url(path='images/group.png')}}" alt="group" /> -->
+          </div>
+          {% endif %}
+        </div>
+      </section>
+            <!-- Pagecontent Section -->
+  <section class="pagecontent">
+    <div class="container wrapper grid">
+           <!-- Paras -->
+           <div class="paras grid">     
+            {{section.content | safe}}
+           </div>
+    </div>
+  </section>
+{% endblock %}
+
+

@@ -1,0 +1,21 @@
+{%- if not alt %}
+{%- set alt = "Image" %}
+{%- endif %}
+{%- if not width %}
+{%- set width = "300" %}
+{%- endif %}
+{%- if not height %}
+{%- set op="fit_width" %}
+{%- set image = resize_image(path=path, width=width, op=op) %}
+{%- else %}
+{%- if not op %}
+{%- set op = "crop" %}
+{%- endif %}
+{%- set image = resize_image(path=path, width=width, height=height, op=op) %}
+{%- endif %}
+{%- if not alt%}
+{%- set alt = "Image" %}
+{%- endif %}
+<img src="{{ image.url }}" alt="{{ alt }}" />
+
+<# example: {{ resize_image(path="products/consultingpackages/consultingbox.png", width=600, alt="Marketing IT Box") }} #}

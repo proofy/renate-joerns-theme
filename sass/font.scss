@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Origo Pro";
+    src: url("fonts/OrigoPro-Regular.woff2") format("woff2"),
+         url("fonts/OrigoPro-Regular.woff") format("woff"),
+         url("fonts/OrigoPro-Regular.eot") format("embedded-opentype"),
+         url("fonts/OrigoPro-Regular.ttf") format("truetype"),
+         url("fonts/OrigoPro-Regular.svg#Origo Pro") format("svg");
+} 
+
+$font-family: "Origo Pro";
+$font-size-menu: 18px;
+$font-size-menu-lv2: 14px;
